@@ -1,1 +1,1 @@
-![Hack ALU](projects/2/ALU.svg)
+![Hack ALU](2/ALU.svg)
