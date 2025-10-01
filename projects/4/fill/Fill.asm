@@ -8,65 +8,78 @@
 // i.e. writes "black" in every pixel. When no key is pressed, 
 // the screen should be cleared.
 
+
+(FIRST_LISTEN)
 @KBD
-D=A
-@kbdaddress
-M=D
+D=M
 
-    (LISTEN)
-    @SCREEN
-    D=A
-    @pointer 
-    M=D
+@FIRST_WHITE
+D;JEQ
 
-    @KBD
-    D=M
+@FIRST_BLACK
+0;JMP
 
-    @WHITE
-    D;JEQ
-
-    @BLACK
-    0;JMP
+	(FIRST_WHITE)
+	@SCREEN
+	M=0
+	D=A
+	D=D+1
+	@LISTEN
+	0;JMP
 
 
-        (BLACK)
-        @pointer
-        A=M
-        M=-1
+	(FIRST_BLACK)
+	@SCREEN
+	M=-1
+	D=A
+	D=D+1
+	@LISTEN
+	0;JMP
 
-        D=A
-        @kbdaddress
-        D=M-D
+	(LISTEN)
+	@pointer
+	M=D
 
-        @LISTEN
-        D;JEQ
+	@KBD
+	D=M
 
-        @pointer
-        M=M+1
+	@LOOP_WHITE
+	D;JEQ
 
-        @BLACK
-        0;JMP
+	@LOOP_BLACK
+	0;JMP
 
+		(LOOP_WHITE)
+		@pointer
+		A=M
+		M=0
+		D=A
+		D=D+1
+		@pointer
+		M=D
 
-        (WHITE)
-        @pointer
-        A=M
-        M=-1
+		@KBD
+		D=M
+		@LOOP_WHITE
+		D;JEQ
 
-        D=A
-        @kbdaddress
-        D=M-D
+		@FIRST_BLACK
+		0;JMP
 
-        @LISTEN
-        D;JEQ
+		(LOOP_BLACK)
+		@pointer
+		A=M
+		M=-1
+		D=A
+		D=D+1
+		@pointer
+		M=D
 
-        @pointer
-        M=M+1
+		@KBD
+		D=M
 
-        @WHITE
-        0;JMP
+		@FIRST_WHITE
+		D;JEQ
 
-
-    (END)
-    @END
-    0;JMP
+		@LOOP_BLACK
+		0;JMP
