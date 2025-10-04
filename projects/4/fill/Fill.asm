@@ -8,6 +8,10 @@
 // i.e. writes "black" in every pixel. When no key is pressed, 
 // the screen should be cleared.
 
+@SCREEN
+D=A
+@screenbase
+M=D
 
 (FIRST_LISTEN)
 @KBD
@@ -26,7 +30,6 @@ D;JEQ
 	D=D+1
 	@LISTEN
 	0;JMP
-
 
 	(FIRST_BLACK)
 	@SCREEN
@@ -50,6 +53,17 @@ D;JEQ
 	0;JMP
 
 		(LOOP_WHITE)
+
+		@screenbase
+		D=M
+		@pointer
+		D=M-D
+		@8190
+		D=A-D
+
+		@FIRST_LISTEN
+		D;JEQ
+
 		@pointer
 		A=M
 		M=0
@@ -67,6 +81,17 @@ D;JEQ
 		0;JMP
 
 		(LOOP_BLACK)
+
+		@screenbase
+		D=M
+		@pointer
+		D=M-D
+		@8190
+		D=A-D
+
+		@FIRST_LISTEN
+		D;JEQ
+
 		@pointer
 		A=M
 		M=-1
