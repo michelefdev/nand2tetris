@@ -32,5 +32,38 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-	//// Replace this comment with your code.
+    // If a c-instruction had D destination, then loadD
+    And(a=instruction[4] , b=instruction[15] , out=loadD );
+    // If an a-instraction or A destination then loadA
+    Not(in=instruction[15] , out=not15 );
+    Or(a=instruction[5] , b=not15 , out=loadA );
+    // A content is straight from instruction or from ALU
+    Mux16(a=instruction , b=ALUout , sel=instruction[15] , out=feedA );
+    ARegister(in=feedA , load=loadA , out=outA, out[0..14]=addressM ); 
+    // Selecting between A register and InMemory
+    Mux16(a=outA , b=inM , sel=instruction[12] , out=ALUy );
+    // D content is from the ALU
+    DRegister(in=ALUout , load=loadD , out=outD );
+    // D,A,M are fed into the ALU
+    ALU(x=outD , y=ALUy , zx=instruction[11] , nx=instruction[10] , zy=instruction[9] , ny=instruction[8] , f=instruction[7] , no=instruction[6] , out=ALUout, out=outM , zr=iszero , ng=isneg );
+    
+    //ANALYZING THE JUMP BITS
+    Not(in=iszero , out=isnotzero );
+    Not(in=isneg , out=isnotneg );
+
+    And(a=isneg , b=instruction[2] , out=tmp1 );
+    And(a=iszero , b=instruction[1] , out=tmp2 );
+    Or(a=tmp1 , b=tmp2 , out=first );
+
+    And(a=isnotzero , b=isnotneg , out=tmp3 );
+    And(a=tmp3 , b=instruction[0] , out=second );
+    Or(a=first , b=second , out=loadPC );
+
+    Not(in=reset , out=notreset );
+    Not(in=loadPC , out=notloadPC );
+    And(a=notreset , b=notloadPC , out=incPC );
+
+    PC(in=outA , load=loadPC , inc=incPC , reset=reset , out[0..14]=pc );
+    And(a=true , b=instruction[3] , out=maybewriteM );
+    And(a=maybewriteM , b=instruction[15] , out=writeM );
 }
