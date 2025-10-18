@@ -32,6 +32,7 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
+    
     // If a c-instruction had D destination, then loadD
     And(a=instruction[4] , b=instruction[15] , out=loadD );
     // If an a-instraction or A destination then loadA
@@ -57,7 +58,8 @@ CHIP CPU {
 
     And(a=isnotzero , b=isnotneg , out=tmp3 );
     And(a=tmp3 , b=instruction[0] , out=second );
-    Or(a=first , b=second , out=loadPC );
+    Or(a=first , b=second , out=isjump );
+    And(a=isjump , b=instruction[15] , out=loadPC );
 
     Not(in=reset , out=notreset );
     Not(in=loadPC , out=notloadPC );
