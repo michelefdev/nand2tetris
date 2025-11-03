@@ -38,29 +38,3 @@ By the end of Chapter 6, I now have a complete **Hack Computer**, capable of:
 
 This lays the groundwork for the next phase:
 > **Writing an assembler, VM, compiler, and building a full operating system.**
-
-## 🗂️ Repository Contents
-
-```
-/
-├─ 01-boolean-logic/
-├─ 02-combinational-chips/
-├─ 03-sequential-logic/
-├─ 04-machine-language/
-├─ 05-cpu/
-└─ 06-computer/
-```
-
-Each folder includes:
-- `.hdl` hardware designs
-- `.tst` / `.cmp` test files and results
-- Notes & reflections
-
-## 🚀 Next Steps (Coming Soon…)
-
-- Chapter 7: **Assembler**
-- Chapter 8–11: **VM + Compiler**
-- Chapter 12: **Operating System**
-
-If you're also studying Nand2Tetris — feel free to fork, compare, or open discussions!  
-Learning is better together 🤝✨
