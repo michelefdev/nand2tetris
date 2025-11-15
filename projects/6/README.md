@@ -1,4 +1,4 @@
-# Hack Assembler (Generated with `copilot.med`)
+# Hack Assembler (Generated with copilot using `assembler_copilot.md`)
 
 A compact Hack Assembler for Nand2Tetris, generated using a structured
 `assembler_copilot.md` file to guide GitHub Copilot.
