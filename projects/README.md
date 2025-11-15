@@ -1,1 +1,0 @@
-![Hack ALU](2/ALU.svg)
