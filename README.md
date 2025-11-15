@@ -21,7 +21,7 @@ You start with *boolean logic*, then build:
 ## 📚 Chapters & Key Achievements
 
 | Chapter | Focus | Highlights |
-|--------|--------|--------|------------|
+|--------|--------|------------|
 | 1 | Boolean Logic | Implemented basic logic gates (AND, OR, XOR, etc.) using only NAND; verified gates through provided test scripts |
 | 2 | Boolean Arithmetic | Built adders, incrementer and ALU |
 | 3 | Sequential Logic | Constructed flip-flops registersand a program counter, built RAM from lower-level memory elements |
