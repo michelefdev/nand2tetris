@@ -24,10 +24,10 @@ You start with *boolean logic*, then build:
 |--------|--------|------------|
 | 1 | Boolean Logic | Implemented basic logic gates (AND, OR, XOR, etc.) using only NAND; verified gates through provided test scripts |
 | 2 | Boolean Arithmetic | Built adders, incrementer and ALU |
-| 3 | Sequential Logic | Constructed flip-flops registersand a program counter, built RAM from lower-level memory elements |
+| 3 | Sequential Logic | Constructed flip-flops registers and a program counter, built RAM from lower-level memory elements |
 | 4 | Machine Language | Learned Hack machine instruction specification by writing small programs in Hack assembly and ran them in the CPU emulator |
 | 5 | Computer Architecture | Integrated CPU, instruction memory and working memory into a computer capable of running 16 bits instructions |
-| 6 | Assembler| Connected CPU, memory, and ROM into a full computer platform; successfully ran programs end-to-end |
+| 6 | Assembler | Built an assembler in python
 
 ## 🧩 What This Phase Builds
 
