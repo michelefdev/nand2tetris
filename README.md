@@ -20,14 +20,14 @@ You start with *boolean logic*, then build:
 
 ## 📚 Chapters & Key Achievements
 
-| Chapter | Focus | Status | Highlights |
+| Chapter | Focus | Highlights |
 |--------|--------|--------|------------|
-| 1 | Boolean Logic | ✅ Completed | Implemented basic logic gates (AND, OR, XOR, etc.) using only NAND; verified gates through provided test scripts |
-| 2 | Boolean Arithmetic | ✅ Completed | Built adders, incrementer and ALU |
-| 3 | Sequential Logic | ✅ Completed | Constructed flip-flops registersand a program counter, built RAM from lower-level memory elements |
-| 4 | Machine LAnguage | ✅ Completed | Learned Hack machine instruction specification by writing small programs in Hack assembly and ran them in the CPU emulator |
-| 5 | Computer Architecture | ✅ Completed | Integrated CPU, instruction memory and working memory into a computer capable of running 16 bits instructions |
-| 6 | Assembler| ✅ Completed | Connected CPU, memory, and ROM into a full computer platform; successfully ran programs end-to-end |
+| 1 | Boolean Logic | Implemented basic logic gates (AND, OR, XOR, etc.) using only NAND; verified gates through provided test scripts |
+| 2 | Boolean Arithmetic | Built adders, incrementer and ALU |
+| 3 | Sequential Logic | Constructed flip-flops registersand a program counter, built RAM from lower-level memory elements |
+| 4 | Machine LAnguage | Learned Hack machine instruction specification by writing small programs in Hack assembly and ran them in the CPU emulator |
+| 5 | Computer Architecture | Integrated CPU, instruction memory and working memory into a computer capable of running 16 bits instructions |
+| 6 | Assembler| Connected CPU, memory, and ROM into a full computer platform; successfully ran programs end-to-end |
 
 ## 🧩 What This Phase Builds
 
