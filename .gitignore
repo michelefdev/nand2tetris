@@ -1,3 +1,11 @@
 .DS_Store
 tools/*
 
+# Python cache and bytecode
+# Ignore any __pycache__ directory anywhere in the repo
+**/__pycache__/
+__pycache__/
+__pycache__/**
+*.py[cod]
+*.pyo
+
