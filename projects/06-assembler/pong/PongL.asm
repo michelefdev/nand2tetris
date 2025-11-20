@@ -3,6 +3,12 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/6/pong/PongL.asm
 
+// The Pong game (symbol-less version).
+// This is a complete Pong implementation originally written in Jack,
+// compiled to VM code, then translated to Hack assembly. The Pong game
+// allows two players to control paddles and bounce a ball back and forth.
+// This symbol-less version is designed for testing the basic assembler.
+//
 // Symbol-less version of the Pong.asm program.
 // Designed for testing the basic version of the assembler.
 

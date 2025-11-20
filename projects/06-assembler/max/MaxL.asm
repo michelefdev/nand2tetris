@@ -3,6 +3,9 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/6/max/MaxL.asm
 
+// Computes R2 = max(R0, R1)  (R0,R1,R2 refer to RAM[0],RAM[1],RAM[2])
+// Usage: Before executing, put two values in R0 and R1.
+//
 // Symbol-less version of the Max.asm program.
 // Designed for testing the basic version of the assembler.
 

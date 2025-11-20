@@ -3,6 +3,10 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/6/rect/RectL.asm
 
+// Draws a rectangle at the top-left corner of the screen.
+// The rectangle is 16 pixels wide and R0 pixels high.
+// Usage: Before executing, put a value in R0.
+//
 // Symbol-less version of the Rect.asm program.
 // Designed for testing the basic version of the assembler.
 
